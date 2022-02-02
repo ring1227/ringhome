@@ -1,0 +1,39 @@
+<!DOCUTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link th:href="@{/css/style.css}" rel="styleSheet">
+<title>top page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div th:include="header :: header"></div>
+
+	<form th:action="@{/register}" th:object="${testData}" method="post">
+		<table>
+			<tr>
+				<th class="th_title">項目１</th>
+				<td><input type="text" th:field="*{input1}"></td>
+			</tr>
+			<tr>
+				<th class="th_title">項目２</th>
+				<td><input type="text" th:field="*{input2}"></td>
+			</tr>
+			<tr>
+				<th class="th_title">項目３</th>
+				<td><input type="text" th:field="*{input3}"></td>
+			</tr>
+		</table>
+		<div class="center">
+			<input type="submit" value="登録" class="button_register">
+		</div>
+	</form>
+
+<!-- 	<h1>Hello!</h1>
+	<p class="msg">sample page</p> -->
+	<!-- 		<p th:text="${msg}">"${msg}"</p> -->
+<!-- 		<form method="post" action"/send"> -->
+<!-- 			<input type-"text" name="text1" th:value="${value}" /> -->
+<!-- 			<input type-"submit" value="Click" /> -->
+<!-- 		</form> -->
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCUTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link th:href="@{/css/style.css}" rel="styleSheet">
+<title>top page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div th:include="header :: header"></div>
+
+	<div class="container">
+		<h1>テスト一覧</h1>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>項目１</th>
+					<th>項目２</th>
+					<th>項目３</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="testData : ${testDataList}" th:object="${testData}"
+					class="align-middle">
+					<td th:text="*{input1}"></td>
+					<td th:text="*{input2}"></td>
+					<td th:text="*{input3}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>

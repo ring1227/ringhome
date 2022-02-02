@@ -1,0 +1,14 @@
+<!DOCUTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link th:href="@{/css/style.css}" rel="styleSheet">
+<title>top page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div th:include="header :: header"></div>
+
+	<h1>Hello!</h1>
+	<p th:text="${message}"></p>
+</body>
+</html>
