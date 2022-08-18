@@ -67,6 +67,10 @@ table input {
 	width: 90%;
 }
 
+td.align_right {
+	text-align: right;
+}
+
 .th_title {
 	border-right: 0;
 }

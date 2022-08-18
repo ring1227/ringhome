@@ -7,23 +7,47 @@
 </head>
 <body>
 	<div th:include="header :: header"></div>
+	
+	<h1>検索画面</h1>
+	
+	<form th:action="@{/list}" th:object="${joken}" method="post">
+		<table>
+			<tr>
+				<th class="th_title">基準年月</th>
+				<td><input type="text" th:field="*{kijunYm}"></td>
+				<th class="th_title">日付</th>
+				<td><input type="text" th:field="*{torokuYmd}"></td>
+			</tr>
+			<tr>
+				<th class="th_title">科目</th>
+				<td colspan="3"><input type="text" th:field="*{kamokuKbn}"></td>
+			</tr>
+		</table>
+		<div class="center">
+			<input type="submit" value="検索" class="button_register">
+		</div>
+	</form>
 
 	<div class="container">
 		<h1>テスト一覧</h1>
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>項目１</th>
-					<th>項目２</th>
-					<th>項目３</th>
+					<th>基準年月</th>
+					<th>日付</th>
+					<th>科目</th>
+					<th>メモ</th>
+					<th>金額</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="testData : ${testDataList}" th:object="${testData}"
+				<tr th:each="data : ${dataList}" th:object="${data}"
 					class="align-middle">
-					<td th:text="*{input1}"></td>
-					<td th:text="*{input2}"></td>
-					<td th:text="*{input3}"></td>
+					<td th:text="*{kijunYm}"></td>
+					<td th:text="*{torokuYmdStr}"></td>
+					<td th:text="*{kamokuKbn}"></td>
+					<td th:text="*{memo}"></td>
+					<td class="align_right" th:text="*{T(java.lang.String).format('%,d', kingaku)}"></td>
 				</tr>
 			</tbody>
 		</table>
