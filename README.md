@@ -1,5 +1,3 @@
 # ringhome
 
-test
 
-test2
